@@ -10,7 +10,7 @@ char *mx_file_to_str(const char *file) {
         return NULL;
     }
 
-    char *str = NULL;
+    char *str = mx_strnew(0);
     char buf[1025];
     int buf_len;
 

@@ -1,7 +1,12 @@
 #include "../inc/libmx.h"
 
 void mx_print_strarr(char **arr, const char *delim) {
-    if (arr == NULL || *arr == NULL || delim == NULL) {
+    if (arr == NULL || delim == NULL) {
+        return;
+    }
+
+    if (*arr == NULL) {
+        mx_printchar('\n');
         return;
     }
 

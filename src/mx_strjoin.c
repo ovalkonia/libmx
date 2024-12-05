@@ -13,6 +13,6 @@ char *mx_strjoin(const char *s1, const char *s2) {
         return NULL;
     }
 
-    return mx_strcat(mx_stpcpy(join, s1), s2);
+    return mx_strcat(mx_strcpy(join, s1), s2);
 }
 

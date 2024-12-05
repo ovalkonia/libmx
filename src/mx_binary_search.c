@@ -5,6 +5,7 @@ int mx_binary_search(char **arr, int size, const char *s, int *count) {
         return -1;
     }
 
+    *count = 0;
     int low = 0;
     int high = size - 1;
 
@@ -18,9 +19,9 @@ int mx_binary_search(char **arr, int size, const char *s, int *count) {
         }
 
         if (cmp < 0) {
-            high = mid - 1;
-        } else {
             low = mid + 1;
+        } else {
+            high = mid - 1;
         }
     }
 

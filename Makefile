@@ -10,11 +10,11 @@ all: $(LIBMX)
 
 .PHONY: clean
 clean:
-	rm -rf $(OBJ_DIR)
+	$(RM) -r $(OBJ_DIR)
 
 .PHONY: uninstall
 uninstall: clean
-	rm -f $(LIBMX)
+	$(RM) $(LIBMX)
 
 .PHONY: reinstall
 reinstall: uninstall all
@@ -26,5 +26,5 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(LIBMX): $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(wildcard $(SRC_DIR)/*.c))
-	ar -rs $(LIBMX) $?
+	$(AR) -rcs $(LIBMX) $?
 
